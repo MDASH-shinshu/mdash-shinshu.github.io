@@ -3,6 +3,10 @@
 * HTMLやPDFなどを直接ブラウザで見せたい場合にはここへデプロイすること．
 * pushした後，10分以内にはGitHub Pagesの自動変換機能によって Activate される．
 
+### サイトトップ
+* ランディングページは，ここへ構築するとよかろう (index.mdから Jekyll で自動生成)
+* https://mdash-shinshu.github.io/
+
 ### MDASH-T-DE: データエンジニアリング(DE)基礎(T)
 
 URLの例：
