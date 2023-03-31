@@ -11,7 +11,7 @@
 
 URLの例：
 * chap.1 PDF版 https://mdash-shinshu.github.io/MDASH-T-DS/1/1_data_science.pdf
-* chap.1 Reveal.js slides HTML版 https://mdash-shinshu.github.io/MDASH-T-DSE/1/1_data_science.slides.html#/
+* chap.1 Reveal.js slides HTML版 https://mdash-shinshu.github.io/MDASH-T-DS/1/1_data_science.slides.html#/
 * ページ指定 https://mdash-shinshu.github.io/MDASH-T-DS/1/1_data_science.slides.html#/36
 
 ### MDASH-T-DE: データエンジニアリング(DE)基礎(T)
