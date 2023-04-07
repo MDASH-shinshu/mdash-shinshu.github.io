@@ -4,7 +4,7 @@
 * pushした後，10分以内にはGitHub Pagesの自動変換機能によって Activate される．
 
 ### サイトトップ
-* ランディングページは，ここへ構築するとよかろう (index.mdから Jekyll で自動生成)
+* index.mdから Jekyll で自動生成される
 * https://mdash-shinshu.github.io/
 
 ### MDASH-T-DS: データサイエンス(DS)基礎(T)
