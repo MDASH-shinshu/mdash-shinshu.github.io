@@ -15390,6 +15390,24 @@ dtype: int64
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># numexprの version 2.8.5は queryにバグがあるので、バージョン指定でインストール場合 (2023.8.31 KW)</span>
+<span class="c1"># 参考：https://github.com/pandas-dev/pandas/issues/54449</span>
+<span class="c1"># !pip install numexpr==2.8.4</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15399,11 +15417,16 @@ dtype: int64
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 分位数を指定する—df.quantile()</span>
+
 <span class="n">q</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span> <span class="mf">0.001</span><span class="p">)</span> <span class="c1"># 分位数 上位0.1%に属するもの（調整してみよ）</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 
-<span class="n">df_quan</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;weight &gt; @q&#39;</span><span class="p">)</span> <span class="c1"># queryを使って，外れ値となっているレコードを確認する</span>
-<span class="n">df_quan</span>
+<span class="c1"># local variable substitution syntaxを用いた方法（numexprの version 2.8.5は query にバグがあるので動かない） (2023.8.31 KW)</span>
+<span class="c1"># df_quan = df.query(&#39;weight &gt; @q&#39;) # queryを使って，外れ値となっているレコードを確認する</span>
+
+<span class="c1"># dataframe自体の行抽出処理を使う方法 (2023.8.31 YM)</span>
+<span class="n">df_quan2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">]</span> <span class="c1"># queryを使って，外れ値となっているレコードを確認する</span>
+<span class="n">df_quan2</span>
 </pre></div>
 
      </div>
