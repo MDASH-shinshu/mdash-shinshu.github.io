@@ -24,6 +24,10 @@ URLの例：
 * chap.1 Reveal.js slides HTML版 <https://mdash-shinshu.github.io/MDASH-T-DE/1/1_big_data.slides.html#/>
 * ページ指定 <https://mdash-shinshu.github.io/MDASH-T-DE/1/1_big_data.slides.html#/36>
 
+## MDASH-T-IR: 画像認識へのAI適用(T)
+
+TBA
+
 ## Support or Contact
 
 TBA
