@@ -26,7 +26,11 @@ URLの例：
 
 ## MDASH-T-IR: 画像認識へのAI適用(T)
 
-TBA
+URLの例：
+
+* chap.1 PDF版 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.pdf>
+* chap.1 Reveal.js slides HTML版 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.slides.html#/>
+* ページ指定 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.slides.html#/26>
 
 ## Support or Contact
 
