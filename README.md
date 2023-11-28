@@ -1,7 +1,7 @@
 # 信州大学「数理データエンジニアリング」関係 GitHub Pages
 
 * HTMLやPDFなどを直接ブラウザで見せたい場合にはここへデプロイすること．
-* pushした後，10分以内にはGitHub Pagesの自動変換機能によって Activate される．
+* pushした後，5分以内にはGitHub Pagesの自動変換機能によって Activate される．
 
 ## サイトトップ
 
