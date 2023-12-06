@@ -7491,12 +7491,8 @@ a.anchor-link {
 </ul>
 <p>《キーワード》</p>
 <blockquote>
-<p>ニューラルネットワーク、入力層、中間層、出力層、学習アルゴリズム、シグモイド関数、学習定数、活性化関数、重みの更新、誤差逆伝播法</p>
+<p>ニューラルネットワーク、入力層、中間層、出力層、学習アルゴリズム、シグモイド関数、学習定数、活性化関数、重みの更新、誤差逆伝播法、教師つき学習、クラス分類、パターン認識、特徴量抽出</p>
 </blockquote>
-<p>、パターン認識
-、教師つき学習
-、クラス分類
-、特徴量抽出</p>
 </div>
 </div>
 </div>
@@ -7582,7 +7578,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>なお、従来のニューラルネットワークの学習では、画像から識別に有効であると考えられる特徴をあらかじめ抽出し、その特徴量をネットワークの入力に与えて学習する手法が用いられてきたそれでは、次に、どのように出力層の値を目的の値に近づけるかを考えてみよう。</p>
+<p>それでは、次に、どのように出力層の値を目的の値に近づけるかを考えてみよう。</p>
 <p>今、犬と猫の判別をする場合、出力層のユニット数が2個であり、犬である場合は、1つ目のユニットの値が1、2つ目のユニットの値が0になり、一方、猫である場合は、それとは逆に、0と1の値になるようにしたいと考えよう。ある入力画像の値を入力層に与えた場合、上記のネットワークの伝達の計算を行うと、何らかの出力値が出力層の2つのユニットに得られる。ここで、入力した画像の正解がわかっていると仮定しよう。つまり、犬であった場合は出力層の値は「1, 0」が正解、猫の場合は「0, 1」が正解である。このような正解データのことを教師信号と呼ぶ。</p>
 <p>ニューラルネットワークでは、現在の出力値と教師信号との誤差を計算し（誤差関数）、その値が小さくなる方向に、ネットワークの重み（●印）の値を修正する作業を行う。この計算は、通常のネットワーク計算とは逆順に、つまり出力層から入力層に向かって、重みの値を修正するように行われるため、誤差逆伝播法と呼ばれている。</p>
 </div>
@@ -7694,7 +7690,7 @@ $$\Delta w_{ji}=\eta\ y_j\left(1-y_j\right)y_i\sum_{k}{\left({\widehat{y_k}}-y_k
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>しかし、式(3)、 (4)のままでは、重みの更新が極端過ぎて学習が不安定になることがある。 そこで、ここでは過去の学習の慣性を利用した次の式を用いることとする (*4)。</p>
-$$\Delta w_{kj}\left(t+1\right)=\eta\left({\widehat{y_k}}-y_k\right)y_k\left(1-y_k\right)y_j+\alpha\Delta w_{kj}\left(t\right) \tag{5}$$$$\Delta w_{ji}\left(t+1\right)=\eta\ y_j\left(1-y_j\right)y_i\sum_{k}{\left({\widehat{y_k}}-y_k\right)y_k\left(1-y_k\right)w_{kj}}+\alpha\Delta w_{ji}\left(t\right) \tag{6}$$<p>ここで $\alpha$ は安定化定数と呼ばれ、この値が大きい程過去の学習傾向を重視することになる。$$は学習回数を示す。</p>
+$$\Delta w_{kj}\left(t+1\right)=\eta\left({\widehat{y_k}}-y_k\right)y_k\left(1-y_k\right)y_j+\alpha\Delta w_{kj}\left(t\right) \tag{5}$$$$\Delta w_{ji}\left(t+1\right)=\eta\ y_j\left(1-y_j\right)y_i\sum_{k}{\left({\widehat{y_k}}-y_k\right)y_k\left(1-y_k\right)w_{kj}}+\alpha\Delta w_{ji}\left(t\right) \tag{6}$$<p>ここで $\alpha$ は安定化定数と呼ばれ、この値が大きい程過去の学習傾向を重視することになる。$t$は学習回数を示す。</p>
 <p>また、シグモイド関数 $f(x) = 1/(1+exp(-x))$ の $f$軸の位置も学習の要素とするために、入力層と中間層には常に1を出力するユニットを用意した（これは、バイアス項として機能する）。</p>
 <blockquote>
 <p>(*4) ここで用いた最適化アルゴリズムの方法は、Momentumと呼ばれる手法である。他に確率的勾配降下法(SGD)、AdaGrad、RMSProp、Adamなどの方法がある。</p>
@@ -7741,10 +7737,10 @@ $$\Delta w_{kj}\left(t+1\right)=\eta\left({\widehat{y_k}}-y_k\right)y_k\left(1-y
 <p>以上をまとめると、 学習アルゴリズムと識別アルゴリズムの概略は次のような形式となる。</p>
 <h4 id="%E5%AD%A6%E7%BF%92%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0">学習アルゴリズム<a class="anchor-link" href="#%E5%AD%A6%E7%BF%92%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0">¶</a></h4><pre><code>1. 中間層と出力層の重みを乱数値によって初期化する。
 2. 入力パターン(合計n個)の各パターンpについて、下記の処理を行なう。
-i. パターンpを入力層に入力し、式(1)に従って中間層の出力値 yj を求める。
-ii. 式(2)に従って出力層の出力値 yk を求める。
-iii. 出力層の重みの更新を式(5)を用いて行なう。
-iv. 中間層の重みの更新を式(6)を用いて行なう。
+  i.   パターンpを入力層に入力し、式(1)に従って中間層の出力値 y_j を求める。
+  ii.  式(2)に従って出力層の出力値 y_k を求める。
+  iii. 出力層の重みの更新を式(5)を用いて行なう。
+  iv.  中間層の重みの更新を式(6)を用いて行なう。
 3. 出力ユニットの平均2乗誤差 式(7) が、ある設定値以上である場合は、 処理2.に戻って繰り返す。 設定値より小さい場合は終了。
 </code></pre>
 $$\frac{1}{n}\sum_{p}\left\{\frac{1}{k_n}\sum_{k}\left({\hat{y}}_k-y_k\right)^2\right\} \tag{7}$$
