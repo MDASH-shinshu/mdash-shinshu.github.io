@@ -7486,13 +7486,12 @@ a.anchor-link {
 <ul>
 <li>フリーマンコード化を用いた曲線のコード化</li>
 <li>曲線の外輪郭と内輪郭の速度差を用いた曲線のコード化</li>
-<li>モデル化曲線の識別</li>
-<li>手書き曲線の識別</li>
+<li>フリーマンコード化を用いた曲線の識別実験</li>
 <li>両輪郭の速度差によるコード化手法を用いた識別実験</li>
 </ul>
 <p>《キーワード》</p>
 <blockquote>
-<p>文字認識、曲線、屈曲度、フリーマンコード、速度差、特徴量、コード化、識別、類似文字、特徴ベクトル、認識率</p>
+<p>文字認識、曲線、屈曲度、フリーマンコード、特徴量、コード化、識別、類似文字、特徴ベクトル、認識率</p>
 </blockquote>
 </div>
 </div>
@@ -7628,7 +7627,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>まず、軸の区間 $[x_{10}, x_0] $ と $[x_0, x_{10}]$ をそれぞれ等間隔に10分割し、分割した $x$軸の各点の値を $x_{-10}, x_{-9}, \cdots, x_0, x_1, x_2, \cdots, x_i, \cdots, x_{10}$ で示す。そこで、各整数 $\{ i | -10 \leq i \leq 9 \}$ について 座標 $(x_i, y(x_i))$, $(x_{i+1} , y(x_{i+1}))$ を結ぶ区分的な直線を考える。この直線を次のアルゴリズムを用いてフリーマンコードに変換する。</p>
+<p>まず、軸の区間 $[x_{-10}, x_0] $ と $[x_0, x_{10}]$ をそれぞれ等間隔に10分割し、分割した $x$軸の各点の値を $x_{-10}, x_{-9}, \cdots, x_0, x_1, x_2, \cdots, x_i, \cdots, x_{10}$ で示す。そこで、各整数 $\{ i | -10 \leq i \leq 9 \}$ について 座標 $(x_i, y(x_i))$, $(x_{i+1} , y(x_{i+1}))$ を結ぶ区分的な直線を考える。この直線を次のアルゴリズムを用いてフリーマンコードに変換する。</p>
 <pre><code>for i := -10 to 9 do begin
   loop := (y(x[i+1]) - y(x[i])) / (x[i+1] - x[i])の絶対値の整数部分
   if(loop = 0) then フリーマンコード6を生成
@@ -7809,7 +7808,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>よって、入力層のユニット数は、通常のフリーマンコード化を用いた場合は60であり、一階差分化した場合は57である。出力層には被験者によって入力された尖鋭度の判定値を教師信号として与え(曲線が「まるい」と判定された場合は「0」、「するどい」と判定された場合は「1」を与える)、「使用するニューラルネットワークの構成と学習法」 で述べた誤差逆伝搬アルゴリズムを用いて、ネットワークの重みの学習を行わせた。学習は1サイクルのネットワークの出力値と教師信号の値の平均誤差が 0.0001に達したところで停止させた。ここで、1サイクルとは、用いる全ての学習パターン(曲線パターンと、対応する教師信号)をネットワークに与えて、重みの更新をする一回の処理過程のことである。</p>
+<p>よって、入力層のユニット数は、通常のフリーマンコード化を用いた場合は60であり、一階差分化した場合は57である。出力層には被験者によって入力された尖鋭度の判定値を教師信号として与え(曲線が「まるい」と判定された場合は「0」、「するどい」と判定された場合は「1」を与える)、「3層型ニューラルネットワークによる学習と識別」 で述べた誤差逆伝搬アルゴリズムを用いて、ネットワークの重みの学習を行わせた。学習は1サイクルのネットワークの出力値と教師信号の値の平均誤差が 0.0001に達したところで停止させた。ここで、1サイクルとは、用いる全ての学習パターン(曲線パターンと、対応する教師信号)をネットワークに与えて、重みの更新をする一回の処理過程のことである。</p>
 </div>
 </div>
 </div>
@@ -8033,7 +8032,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 <tr>
 <td style="text-align:center">通常のフリーマンコード</td>
 <td style="text-align:center">×</td>
-<td style="text-align:center">未知パターン(100本)</td>
+<td style="text-align:center">未知パターン(200本)</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">95.5</td>
 </tr>
@@ -8047,7 +8046,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 <tr>
 <td style="text-align:center">通常のフリーマンコード</td>
 <td style="text-align:center">◯</td>
-<td style="text-align:center">未知パターン(100本)</td>
+<td style="text-align:center">未知パターン(200本)</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">96.0</td>
 </tr>
@@ -8061,7 +8060,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 <tr>
 <td style="text-align:center">一階差分化コード</td>
 <td style="text-align:center">×</td>
-<td style="text-align:center">未知パターン(100本)</td>
+<td style="text-align:center">未知パターン(200本)</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">88.5</td>
 </tr>
@@ -8075,7 +8074,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 <tr>
 <td style="text-align:center">一階差分化コード</td>
 <td style="text-align:center">◯</td>
-<td style="text-align:center">未知パターン(100本)</td>
+<td style="text-align:center">未知パターン(200本)</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">90.0</td>
 </tr>
@@ -8092,7 +8091,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.3-%E8%AD%98%E5%88%A5%E5%AE%9F%E9%A8%93%E3%81%AE%E8%A9%95%E4%BE%A1">4.3 識別実験の評価<a class="anchor-link" href="#4.3-%E8%AD%98%E5%88%A5%E5%AE%9F%E9%A8%93%E3%81%AE%E8%A9%95%E4%BE%A1">¶</a></h3><p>習パターンの識別に関して、ニューラルネットワークは、モデル曲線と手書き曲線の両方ともに、ほぼ完全に識別できることがわかる。一方、未知パターンに関しては、被験者が明らかに判定可能な曲線パターンについては、十分満足のいく結果を得た。すなわち、誤認識となった曲線を観察すると、被験者が見ても、まるいか鋭いかの判定がしづらいものが多かったのである。例えば、表2の通常のフリーマンコード化をしたパターンの認識は200パターン中、正解が167パターンであるが、残りの誤認識パターン33本中、27本の曲線は人間が見ても、鋭く曲がった曲線か、まるい曲線かのどちらともとれるような曲線であった。</p>
+<h3 id="4.3-%E8%AD%98%E5%88%A5%E5%AE%9F%E9%A8%93%E3%81%AE%E8%A9%95%E4%BE%A1">4.3 識別実験の評価<a class="anchor-link" href="#4.3-%E8%AD%98%E5%88%A5%E5%AE%9F%E9%A8%93%E3%81%AE%E8%A9%95%E4%BE%A1">¶</a></h3><p>学習パターンの識別に関して、ニューラルネットワークは、モデル曲線と手書き曲線の両方ともに、ほぼ完全に識別できることがわかる。一方、未知パターンに関しては、被験者が明らかに判定可能な曲線パターンについては、十分満足のいく結果を得た。すなわち、誤認識となった曲線を観察すると、被験者が見ても、まるいか鋭いかの判定がしづらいものが多かったのである。例えば、表2の通常のフリーマンコード化をしたパターンの認識は200パターン中、正解が167パターンであるが、残りの誤認識パターン33本中、27本の曲線は人間が見ても、鋭く曲がった曲線か、まるい曲線かのどちらともとれるような曲線であった。</p>
 </div>
 </div>
 </div>
@@ -8114,7 +8113,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Gray符号化に関して結果を見ると、Gray符号化しないパターンより、したパターンの方が全てにおいて、若干、認識率が向上していることがわかる。よって、Gray符号化を用いることにより、コード変換部分の画像誤差に対する耐性をある程度、向上させることができたと考えられる</p>
+<p>Gray符号化に関して結果を見ると、Gray符号化しないパターンより、したパターンの方が全てにおいて、若干、認識率が向上していることがわかる。よって、Gray符号化を用いることにより、コード変換部分の画像誤差に対する耐性をある程度、向上させることができたと考えられる。</p>
 </div>
 </div>
 </div>
@@ -8161,7 +8160,7 @@ $$\left|x\right|^n+\left|y\right|^m=1\ \ \ \ \ \ \ \left(-1\le x\le1,\ \ \ n,\ m
 <p>各曲線に対して、「曲線の外輪郭と内輪郭の速度差を用いた曲線のコード化」で述べたコード化手法を用いて、特徴ベクトルの抽出を行った。例として、このコード化の処理過程を図15に示す。左図は、入力した曲線パターンであり、右図はその外輪郭と内輪郭の対応点を結び、コード化した結果を示している。ここで、屈曲点付近に重要な特徴が含まれることと、ニューラルネットワークに入力するコードの数を同一にするために、採用するコード列は、屈曲点を中心として、両側に10ビット分のコードを採用した。つまり、外輪郭、内輪郭の屈曲点の両側に10ビット分、合計40ビット分のコードとなる。ここで、屈曲点の位置は、簡単のため、手動で入力した。</p>
 <figure>
 <img alt="曲線の外輪郭と内輪郭の対応点の生成過程" border="1" src="https://raw.githubusercontent.com/MDASH-shinshu/MDASH-T-IR/main/A1/figures/fig15.png" width="600"/>
-<figcaption>図15 曲線の外輪郭と内輪郭の対応点の生成過程（左図：入力した曲線パターン(鋭く屈曲している曲線、右図：輪郭間の対応点の生成。各点の対応線を白線で表示した。この曲線パターンに対して、生成されたコード列は、外輪郭 10111111111111111111、内輪郭 11000000001000000001）</figcaption>
+<figcaption>図15 曲線の外輪郭と内輪郭の対応点の生成過程（左図：入力した曲線パターン(鋭く屈曲している曲線)、右図：輪郭間の対応点の生成。各点の対応線を白線で表示した。この曲線パターンに対して、生成されたコード列は、外輪郭 10111111111111111111、内輪郭 11000000001000000001）</figcaption>
 </figure>
 </div>
 </div>
