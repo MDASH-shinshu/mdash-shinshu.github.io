@@ -7596,17 +7596,6 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>プログラムのmodel.addメソッドは、ネットワークに各層を追加している。</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7642,7 +7631,7 @@ a.anchor-link {
 <pre><code>1  model = models.Sequential()
 2  model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
 </code></pre>
-<p>まず、２行目では、layers.Conv2Dを使って、畳み込み層を追加している。32は、フィルタ数を示し、(3, 3)はフィルタのサイズ、activationは活性化関数の指定（ここでは、ReLUを指定）、input_shapeは入力画像のサイズが28×28画素でグレースケール画像であることを意味している。図41で考えると、入力画像について、3×3のフィルタを適用して畳み込みを行い、結果として、26×26の大きさの32チャンネルの画像(行列)を生成していることになる。</p>
+<p>プログラムのmodel.addメソッドは、ネットワークに各層を追加している。まず、２行目では、layers.Conv2Dを使って、畳み込み層を追加している。32は、フィルタ数を示し、(3, 3)はフィルタのサイズ、activationは活性化関数の指定（ここでは、ReLUを指定）、input_shapeは入力画像のサイズが28×28画素でグレースケール画像であることを意味している。図41で考えると、入力画像について、3×3のフィルタを適用して畳み込みを行い、結果として、26×26の大きさの32チャンネルの画像(行列)を生成していることになる。</p>
 </div>
 </div>
 </div>
@@ -7877,7 +7866,7 @@ Epoch 5/5
 <td style="text-align:center">----</td>
 <td style="text-align:center">5</td>
 <td style="text-align:center">89.08%</td>
-<td style="text-align:center">89.81%</td>
+<td style="text-align:center">89.82%</td>
 </tr>
 <tr>
 <td style="text-align:center">64</td>
@@ -7909,7 +7898,7 @@ Epoch 5/5
 <td style="text-align:center">Adam</td>
 <td style="text-align:center">----</td>
 <td style="text-align:center">5</td>
-<td style="text-align:center">98.03%</td>
+<td style="text-align:center">97.33%</td>
 <td style="text-align:center">97.44%</td>
 </tr>
 <tr>
@@ -7941,7 +7930,7 @@ Epoch 5/5
 <td style="text-align:center">----</td>
 <td style="text-align:center">Adam</td>
 <td style="text-align:center">0.2</td>
-<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
 <td style="text-align:center">97.64%</td>
 <td style="text-align:center">97.87%</td>
 </tr>
@@ -7952,9 +7941,9 @@ Epoch 5/5
 <td style="text-align:center">----</td>
 <td style="text-align:center">Adam</td>
 <td style="text-align:center">0.4</td>
-<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
 <td style="text-align:center">96.54%</td>
-<td style="text-align:center">97.46%</td>
+<td style="text-align:center">97.47%</td>
 </tr>
 </tbody>
 </table>
