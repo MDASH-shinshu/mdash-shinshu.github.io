@@ -7450,7 +7450,7 @@ main {
 </ul>
 <p>《キーワード》</p>
 <blockquote>
-<p>TensorFlow、Keras、画像認識、MNIST、畳み込み層、Conv2D、活性化関数、プーリング層、テンソル要素のベクトル化、出力層、ソフトマックス関数、クロスエントロピー誤差、識別精度(accuracy)、エポック(epoch)</p>
+<p>TensorFlow、Keras、画像認識、CIFAR-10、畳み込み層、Conv2D、活性化関数、プーリング層、テンソル要素のベクトル化、出力層、ソフトマックス関数、クロスエントロピー誤差、識別精度(accuracy)、エポック(epoch)</p>
 </blockquote>
 </div>
 </div>
@@ -7464,7 +7464,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="1.-%E5%90%84%E7%A8%AE%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E3%82%AB%E3%83%A9%E3%83%BC%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF">1. 各種モジュールの読み込みとカラー画像データの読み込み<a class="anchor-link" href="#1.-%E5%90%84%E7%A8%AE%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E3%81%A8%E3%82%AB%E3%83%A9%E3%83%BC%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF">¶</a></h2><p>前述の適用例では、白黒のグレースケール画像（濃淡画像）として数字画像の認識を行ってみたが、ここでは、カラー画像を対象としてCNNを用いた学習と認識を行ってみる。なお、ここで使用するCNNの構造は、画像の入力部分がRGBの3チャンネル画像となる他は、数字認識に用いたCNNの構造とほぼ同じである（本プログラムは、TensorFlowのチュートリアルページ の内容を参考としている）。</p>
 <blockquote>
-<p><a href="https://www.tensorflow.org/tutorials/images/intro_to_cnns?hl=ja">https://www.tensorflow.org/tutorials/images/intro_to_cnns?hl=ja</a></p>
+<p><a href="https://www.tensorflow.org/tutorials/images/cnn?hl=ja">https://www.tensorflow.org/tutorials/images/cnn?hl=ja</a></p>
 </blockquote>
 </div>
 </div>
@@ -7519,7 +7519,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E6%AD%A3%E8%A7%A3%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%A1%A8">2. 画像データと正解データの表<a class="anchor-link" href="#2.-%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E6%AD%A3%E8%A7%A3%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%A1%A8">¶</a></h2><p>先ほど読み込んだ学習用の画像データとそれに対応する正解データを表示してみよう。</p>
+<h2 id="2.-%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E6%AD%A3%E8%A7%A3%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%A1%A8%E7%A4%BA">2. 画像データと正解データの表示<a class="anchor-link" href="#2.-%E7%94%BB%E5%83%8F%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E6%AD%A3%E8%A7%A3%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%A1%A8%E7%A4%BA">¶</a></h2><p>先ほど読み込んだ学習用の画像データとそれに対応する正解データを表示してみよう。</p>
 </div>
 </div>
 </div>
@@ -7568,7 +7568,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>先ほど読み込んだ学習用の画像データとそれに対応する正解データを表示してみよう。まず、1行目では、10種類の画像クラスに名前をつけて、class_namesというリストに格納している。2, 3行目では、学習用画像データの最初の画像 train_images[0] (ここで、添え字0が画像番号を示す。2番目の画像はtrain_images[1]である。)を画面に表示している。</p>
+<p>まず、1行目では、10種類の画像クラスに名前をつけて、class_namesというリストに格納している。2, 3行目では、学習用画像データの最初の画像 train_images[0] (ここで、添え字0が画像番号を示す。2番目の画像はtrain_images[1]である。)を画面に表示している。</p>
 </div>
 </div>
 </div>
@@ -7601,22 +7601,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>図43に、カラー画像認識に使用する畳み込みニューラルネットワークの構造を示し、この構造を実現するためのプログラムを示す。以下、プログラム行と図を対照しながら、各部の説明をする。</p>
+<p>図42に、カラー画像認識に使用する畳み込みニューラルネットワークの構造を示し、この構造を実現するためのプログラムを示す。以下、プログラム行と図を対照しながら、各部の説明をする。</p>
 <figure>
 <img alt="CNNの構造" border="1" src="https://raw.githubusercontent.com/MDASH-shinshu/MDASH-T-IR/main/B2/figures/fig43.png" width="700"/>
-<figcaption>図43　CNNの構造</figcaption>
+<figcaption>図42　CNNの構造</figcaption>
 </figure>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>プログラムのmodel.addメソッドは、ネットワークに各層を追加している。</p>
 </div>
 </div>
 </div>
@@ -7655,7 +7644,7 @@ main {
 <pre><code>1  model = models.Sequential()
 2  model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
 </code></pre>
-<p>まず、2行目では、layers.Conv2Dを使って、畳み込み層を追加している。32は、フィルタ数を示し、(3, 3)はフィルタのサイズ、activationは活性化関数の指定（ここでは、ReLUを指定）、input_shapeは入力画像のサイズが32×32画素でカラー画像であることを意味している（カラー画像はR, G, Bの3枚の画像で構成されているので、3チャンネルの画像であると考えられる）。図43で考えると、入力画像について、3×3のフィルタを適用して畳み込みを行い、結果として、30×30の大きさの32チャンネルの画像(行列)を生成していることになる。</p>
+<p>プログラムのmodel.addメソッドは、ネットワークに各層を追加している。まず、2行目では、layers.Conv2Dを使って、畳み込み層を追加している。32は、フィルタ数を示し、(3, 3)はフィルタのサイズ、activationは活性化関数の指定（ここでは、ReLUを指定）、input_shapeは入力画像のサイズが32×32画素でカラー画像であることを意味している（カラー画像はR, G, Bの3枚の画像で構成されているので、3チャンネルの画像であると考えられる）。図42で考えると、入力画像について、3×3のフィルタを適用して畳み込みを行い、結果として、30×30の大きさの32チャンネルの画像(行列)を生成していることになる。</p>
 </div>
 </div>
 </div>
@@ -7683,7 +7672,7 @@ main {
 5  model.add(layers.MaxPooling2D((2, 2)))
 6  model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 </code></pre>
-<p>以下同様に、4行目で畳み込み層、5行目でMAXプーリング、6行目で畳み込み層をそれぞれ追加している。図43に示すように、結果として、4×4画素の画像が64枚（64チャンネル）生成されることになる。</p>
+<p>以下同様に、4行目で畳み込み層、5行目でMAXプーリング、6行目で畳み込み層をそれぞれ追加している。図42に示すように、結果として、4×4画素の画像が64枚（64チャンネル）生成されることになる。</p>
 </div>
 </div>
 </div>
@@ -7709,7 +7698,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <pre><code>8  model.add(layers.Dense(64, activation='relu'))
 </code></pre>
-<p>8行目のlayers.Denseは、全結合層の追加を意味する。引数の64は、ユニットの個数、activationは活性化関数の種類を示す。よって、図43の下段に示すように、入力層1,024個のユニットから全結合された64個のユニットで構成され、このユニットからの出力には活性化関数としてReLUが適用される。</p>
+<p>8行目のlayers.Denseは、全結合層の追加を意味する。引数の64は、ユニットの個数、activationは活性化関数の種類を示す。よって、図42の下段に示すように、入力層1,024個のユニットから全結合された64個のユニットで構成され、このユニットからの出力には活性化関数としてReLUが適用される。</p>
 </div>
 </div>
 </div>
@@ -7722,7 +7711,7 @@ main {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <pre><code>9  model.add(layers.Dense(10, activation='softmax'))
 </code></pre>
-<p>9行目も全結合層の追加であり、これが出力層となる。ここでは、画像クラスを表現するために10個のユニットを用意し、活性化関数はソフトマックス関数を指定している。これにより、図43に示すように各ユニットからは、各画像クラスである確率値が出力されることになる（例えば、一番上の出力ユニットからは、入力画像が「飛行機」である確率値が出力される）。</p>
+<p>9行目も全結合層の追加であり、これが出力層となる。ここでは、画像クラスを表現するために10個のユニットを用意し、活性化関数はソフトマックス関数を指定している。これにより、図42に示すように各ユニットからは、各画像クラスである確率値が出力されることになる（例えば、一番上の出力ユニットからは、入力画像が「飛行機」である確率値が出力される）。</p>
 </div>
 </div>
 </div>
