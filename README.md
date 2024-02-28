@@ -1,4 +1,4 @@
-# 信州大学「数理データエンジニアリング」関係 GitHub Pages
+# 信州大学「数理データサイエンス・AI教育プログラム」関係 GitHub Pages
 
 * HTMLやPDFなどを直接ブラウザで見せたい場合にはここへデプロイすること．
 * pushした後，5分以内にはGitHub Pagesの自動変換機能によって Activate される．
@@ -31,6 +31,14 @@ URLの例：
 * chap.1 PDF版 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.pdf>
 * chap.1 Reveal.js slides HTML版 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.slides.html#/>
 * ページ指定 <https://mdash-shinshu.github.io/MDASH-T-IR/0/0_introduction.slides.html#/26>
+
+## OpenAI_GPT4_ChatGPT_LangChain: LLM本からのコンテンツ試作
+
+URLの例：
+
+* chap.1 PDF版 <https://mdash-shinshu.github.io/OpenAI_GPT4_ChatGPT_LangChain/1/1_GPT4_ChatGPT_LangChain.pdf>
+* chap.1 HTML版 <https://mdash-shinshu.github.io/OpenAI_GPT4_ChatGPT_LangChain/1/1_GPT4_ChatGPT_LangChain.html>
+
 
 ## Support or Contact
 
